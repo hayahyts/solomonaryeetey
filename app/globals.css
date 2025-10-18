@@ -29,14 +29,20 @@ html { scroll-behavior: smooth; }
     font-size: var(--step-0);
   }
 
-  h1, h2, h3, h4, h5, h6 { @apply font-heading tracking-tight; }
+  h1, h2, h3, h4, h5, h6 { @apply font-heading tracking-[-0.01em]; }
+  h1 { font-weight: 700; }
+  h2 { font-weight: 700; }
 }
 
 /* Utilities */
 @layer utilities {
-  .container-narrow { @apply max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8; }
-  .container-wide { @apply max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8; }
-  .hairline { box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.06); }
+  .container-narrow { @apply max-w-[1040px] mx-auto px-4 sm:px-6 lg:px-8; }
+  .container-wide { @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8; }
+  .hairline { box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.07); }
+
+  /* Underline input style utility to match design */
+  .input-underline { @apply border-0 border-b border-black/20 rounded-none px-0 focus:ring-0 focus:border-black; }
+  .textarea-underline { @apply border-0 border-b border-black/20 rounded-none px-0 focus:ring-0 focus:border-black; }
 }
 
 

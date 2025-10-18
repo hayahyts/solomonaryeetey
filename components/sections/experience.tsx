@@ -11,26 +11,27 @@ const items = [
 
 export function Experience() {
   return (
-    <section className="container-wide py-16 md:py-24">
+    <section className="container-wide py-24 md:py-28">
       <Reveal>
-        <h2 className="text-3xl md:text-4xl font-semibold mb-8">Experience</h2>
+        <div className="flex items-center justify-center gap-6 mb-8">
+          <div className="h-px w-12 bg-black/15" />
+          <h2 className="text-3xl md:text-4xl font-semibold">Experience</h2>
+          <div className="h-px w-12 bg-black/15" />
+        </div>
       </Reveal>
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {items.map((item, index) => (
           <motion.div
             key={item.company}
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.45, delay: index * 0.05 }}
-            className={
-              index % 2 === 0
-                ? 'rounded-xl border border-black/10 p-5 md:p-6 bg-white'
-                : 'rounded-xl p-5 md:p-6 bg-black/[0.02]'
-            }
+            className="border rounded-lg p-4 md:p-5 bg-white"
           >
-            <div className="flex items-center justify-between gap-4">
+            <div className="grid grid-cols-[40px_1fr_auto] items-center gap-4">
+              <div className="h-8 w-8 grid place-content-center border rounded-md text-[12px]">{index + 1}</div>
               <div>
                 <div className="font-medium">{item.company}</div>
                 <div className="text-secondary text-sm">{item.role}</div>

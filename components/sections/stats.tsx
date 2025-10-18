@@ -27,8 +27,9 @@ const stats = [
 function StatItem({ label, value }: { label: string; value: number }) {
   const v = useCountTo(value)
   return (
-    <div className="rounded-2xl border border-black/10 p-6 text-center">
-      <div className="text-3xl font-semibold">{v}</div>
+    <div className="text-center">
+      <div className="mx-auto mb-3 h-8 w-8 rounded-full border grid place-content-center text-xs">★</div>
+      <div className="text-3xl font-semibold">{v.toLocaleString()}</div>
       <div className="text-secondary text-sm mt-2">{label}</div>
     </div>
   )
@@ -36,7 +37,7 @@ function StatItem({ label, value }: { label: string; value: number }) {
 
 export function Stats() {
   return (
-    <section className="container-wide py-16 md:py-24">
+    <section className="container-wide py-24 md:py-28">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {stats.map((s) => (
           <StatItem key={s.label} label={s.label} value={s.value} />

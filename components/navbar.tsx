@@ -34,12 +34,12 @@ export function Navbar() {
 
   return (
     <header className={cn(
-      "fixed inset-x-0 top-0 z-50 transition-all",
-      scrolled ? "backdrop-blur-md bg-white/70 border-b" : "bg-transparent"
+      "fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm border-b",
+      scrolled ? "shadow-none" : ""
     )}>
       <div className="container-wide flex items-center justify-between h-16">
-        <Link href="#about" className="font-heading text-xl">it’s me</Link>
-        <nav className="hidden md:flex items-center gap-8 text-sm">
+        <Link href="#about" className="font-heading text-lg tracking-tight">it’s me</Link>
+        <nav className="hidden md:flex items-center gap-6 text-[13px]">
           {sections.map(s => (
             <a key={s.id} href={`#${s.id}`} className={cn(
               "py-2 transition-colors",

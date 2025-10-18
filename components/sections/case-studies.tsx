@@ -24,29 +24,55 @@ const projects = [
 
 export function CaseStudies() {
   return (
-    <section id="work" className="container-wide py-16 md:py-24">
+    <section id="work" className="container-wide py-24 md:py-28">
       <h2 className="text-3xl md:text-4xl font-semibold mb-8">Case Study</h2>
+
+      {/* Featured */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.5 }}
+        className="mb-8"
+      >
+        <Card className="overflow-hidden">
+          <div className="relative aspect-[21/9]">
+            <Image src={projects[0].image} alt={projects[0].title} fill className="object-cover" />
+          </div>
+          <div className="p-6">
+            <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-wide mb-2">
+              <span className="px-2 py-1 border rounded-full">Web Design</span>
+            </div>
+            <h3 className="text-xl font-medium mb-1">{projects[0].title}</h3>
+            <p className="text-secondary text-sm">{projects[0].desc}</p>
+            <Link href="#" className="mt-3 inline-flex items-center gap-2 text-sm hover:underline">
+              See Details →
+            </Link>
+          </div>
+        </Card>
+      </motion.div>
+
+      {/* Stacked list */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((p, i) => (
+        {projects.slice(1).map((p, i) => (
           <motion.div
             key={p.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
           >
             <Card className="overflow-hidden">
-              <div className="relative aspect-[16/10]">
+              <div className="relative aspect-[4/3]">
                 <Image src={p.image} alt={p.title} fill className="object-cover" />
               </div>
               <div className="p-6">
-                <div className="flex items-start justify-between gap-6">
-                  <div>
-                    <h3 className="text-xl font-medium mb-1">{p.title}</h3>
-                    <p className="text-secondary text-sm">{p.desc}</p>
-                  </div>
+                <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-wide mb-2">
+                  <span className="px-2 py-1 border rounded-full">New Design</span>
                 </div>
-                <Link href="#" className="mt-4 inline-flex items-center gap-2 text-sm hover:underline">
+                <h3 className="text-xl font-medium mb-1">{p.title}</h3>
+                <p className="text-secondary text-sm">{p.desc}</p>
+                <Link href="#" className="mt-3 inline-flex items-center gap-2 text-sm hover:underline">
                   See Details →
                 </Link>
               </div>
