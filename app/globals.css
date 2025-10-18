@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --accent-from: #FFE259;
+  --accent-to: #FFA751;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Fluid type scale - desktop first, scales down */
+@layer base {
+  :root {
+    --step--2: clamp(0.64rem, 0.71rem + -0.1vw, 0.7rem);
+    --step--1: clamp(0.8rem, 0.86rem + -0.1vw, 0.9rem);
+    --step-0: clamp(1rem, 0.98rem + 0.1vw, 1.125rem);
+    --step-1: clamp(1.25rem, 1.17rem + 0.4vw, 1.5rem);
+    --step-2: clamp(1.563rem, 1.37rem + 0.8vw, 2rem);
+    --step-3: clamp(1.953rem, 1.6rem + 1.4vw, 2.5rem);
+    --step-4: clamp(2.441rem, 1.9rem + 2.2vw, 3.5rem);
+    --step-5: clamp(3.052rem, 2.2rem + 3.4vw, 4.5rem);
+  }
+
+  body {
+    @apply bg-background text-primary font-sans antialiased;
+    font-size: var(--step-0);
+  }
+
+  h1, h2, h3, h4, h5, h6 { @apply font-heading tracking-tight; }
+}
+
+/* Utilities */
+@layer utilities {
+  .container-narrow { @apply max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8; }
+  .container-wide { @apply max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8; }
+  .hairline { box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.06); }
+}
+
+
